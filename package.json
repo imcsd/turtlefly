@@ -1,0 +1,29 @@
+{
+  "name": "turtlejs",
+  "version": "1.0.0",
+  "description": "A crawler framework based on NodeJS.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imcsd/turtlejs.git"
+  },
+  "keywords": [
+    "crawler",
+    "spider",
+    "data"
+  ],
+  "author": "icsd",
+  "license": "MIT",
+  "homepage": "https://github.com/imcsd/turtlejs",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "iconv-lite": "^0.5.1"
+  }
+}
