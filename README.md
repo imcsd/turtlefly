@@ -1,4 +1,4 @@
-# TurtleJS
+# TurtleFly
 
 A crawler framework based on NodeJS.
 
@@ -6,7 +6,7 @@ A crawler framework based on NodeJS.
 
 ## Intro
 
-TurtleJS consist with three main modules: 
+TurtleFly consist with three main modules: 
 
 - Crawler - The core class of Node Crawler, all crawler extends this class.
 - Requester - Use to make Web request.
@@ -15,7 +15,7 @@ TurtleJS consist with three main modules:
 Code of framework index.js file:
 
 ```js
-let TurtleJS = {
+module.exports = {
 	Crawler: require('./lib/Crawler'),
 	Requester: require('./lib/Requester'),
 	Scheduler: require('./lib/Scheduler')

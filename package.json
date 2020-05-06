@@ -1,5 +1,5 @@
 {
-  "name": "turtlejs",
+  "name": "turtlefly",
   "version": "1.0.0",
   "description": "A crawler framework based on NodeJS.",
   "main": "index.js",
@@ -11,16 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imcsd/turtlejs.git"
+    "url": "git+https://github.com/imcsd/turtlefly.git"
   },
   "keywords": [
     "crawler",
     "spider",
+    "scraper",
     "data"
   ],
   "author": "icsd",
   "license": "MIT",
-  "homepage": "https://github.com/imcsd/turtlejs",
+  "homepage": "https://github.com/imcsd/turtlefly",
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
