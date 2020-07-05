@@ -1,6 +1,6 @@
 {
   "name": "turtlefly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A crawler framework based on NodeJS.",
   "main": "index.js",
   "directories": {
