@@ -1,16 +1,23 @@
 # TurtleFly
 
-A crawler framework based on NodeJS.
+A flexible crawler framework based on NodeJS.
 
 
 
 ## Intro
 
-TurtleFly consist with three main modules: 
+TurtleFly is a Crawler framework based on Node.js, and now with the version 2.0. which is more simplify and flexible then version 1.
+
+Turtlefly 2.0 consist Crawler schema design, task scheduler, request module and content parse module. 
+
+
+
+## Module
 
 - Crawler - The core class of Node Crawler, all crawler extends this class.
 - Requester - Use to make Web request.
-- Scheduler - Scheduler for task management.
+- RedisScheduler [new] - Task interaction with redis.
+- Task [new] - Record task process and schedule task.
 
 Code of framework index.js file:
 
@@ -22,16 +29,23 @@ module.exports = {
 }
 ```
 
-Other Modules:
 
-- Tasker - Include some utils methods of task process.
-- TaskQueue - Class of Task Queue controll.
+
+## Installation
+
+```
+$ npm i turtlefly
+```
 
 
 
 ## Main Modules API
 
 ### Crawler
+
+> Crawler.constructor(config) 
+
+
 
 > Crawler.loadDom(buffer html, string charset = 'utf-8') : {object} cheerio object
 
@@ -47,94 +61,18 @@ Other Modules:
 
 ### Requester
 
-> Requester.get(string url, {charset = "UTF-8", respType = 'object', config = {}} = {}) : Promise
+> Requester.handle(string url, {charset = "UTF-8", respType = 'object', config = {}} = {}) : Promise
 
 
 
-### Scheduler
+### Task
 
-> Scheduler.constructor()
+> Task.constructor(object crawler)
 
 
 
-> Scheduler.addCrawler(object crawlerInstance)
+> Task.next(bool nextPage = true, bool nextParam = false)
 
 
 
-> Scheduler.eventHandler(String event, Object task)
-
-
-
-> Scheduler.takeRequest(Object task) 
-
-
-
-> Scheduler.getCrawler(String crawlerName)
-
-
-
-## Other Modules
-
-### Tasker
-
-> Tasker.constructor(Object crawler)
-
-Bind a crawler instances when create a tasker.
-
-
-
-> Tasker.init()
-
-
-
-> Tasker.create(Object crawlerConf)
-
-
-
-> Tasker.createNextTask(task, crawlerConf, nextPage = true, nextParam = false)
-
-
-
-> Tasker.doNextTask(task, crawlerConf, nextPage = true, nextParam = false)
-
-
-
-> Tasker.request(task)
-
-
-
-> Tasker.finish(task, result)
-
-
-
-> Tasker.fail(task, failInfo)
-
-
-
-> Tasker.bindScheduler(scheduler)
-
-
-
-> Tasker.propEvent(eventName, Info)
-
-
-
-> Tasker.mapTaskParam(task, paramList)
-
-
-
-> Tasker.getTargetUrl(urlRule, paramSet)
-
-
-
-### Task Queue
-
->TaskQueue.constructor()
-
-
-
->TaskQueue.push(task)
-
-
-
->TaskQueue.pop()
+> Task.request({ url, charset, respType, method, config, payload })
