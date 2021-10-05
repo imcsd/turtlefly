@@ -76,3 +76,29 @@ $ npm i turtlefly
 
 
 > Task.request({ url, charset, respType, method, config, payload })
+
+
+
+### RedisScheduler
+
+RedisScheduler module provide support for distributed task control.
+
+Redis data construction:
+
+* `${key}` for current crawler project name.
+
+```
+# Crawler task list, record task info.
+turtlefly:task:${key}
+
+# Task status - check this status when crawler start and switch to none when task finished.
+# working|none
+turtlefly:task:${key}:status {string}
+
+# Pending task
+turtlefly:task:${key}:pending {list} [task detail json]
+
+# In progress task
+turtlefly:task:${key}:inProgress {hash} [hask -> task detail json]
+```
+
